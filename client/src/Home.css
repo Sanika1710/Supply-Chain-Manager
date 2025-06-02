@@ -1,0 +1,136 @@
+
+
+body {
+  margin: 0;
+  background-color: #fef6e4;
+  font-family: 'Fredoka One', cursive;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-image: url('https://cdn.pixabay.com/photo/2017/01/31/21/23/cartoon-2029518_1280.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fef6e4;
+}
+
+.home-content {
+  max-width: 650px;
+  width: 100%;
+  background-color: #fff8dc;
+  border-radius: 25px;
+  border: 6px dashed #ff6b81;
+  box-shadow: 8px 8px 0px #000;
+  padding: 2rem;
+  transition: transform 0.3s ease-in-out;
+  animation: bounceIn 0.8s ease-in-out forwards;
+}
+
+.home-content:hover {
+  transform: rotate(-1deg) scale(1.03);
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 3.2rem;
+  color: #ff6b81;
+  text-shadow: 3px 3px #000;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.fancy-button {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: #ffa502;
+  color: #fff;
+  border: 4px solid #000;
+  cursor: pointer;
+  text-shadow: 2px 2px #000;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s;
+}
+
+.fancy-button:hover {
+  transform: scale(1.1);
+  box-shadow: 6px 6px 0px #000;
+  background-color: #ff7f50;
+}
+
+.fancy-button.burst {
+  animation: burstEffect 0.5s ease-in-out forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes burstEffect {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px #ffa502;
+  }
+  50% {
+    transform: scale(1.4);
+    box-shadow: 0 0 50px #ffa502;
+  }
+  100% {
+    transform: scale(0);
+    box-shadow: 0 0 0 #ffa502;
+  }
+}
+
+/* Optional: Add subtle hover wiggle */
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+}
+
+.fancy-button:hover {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 2.2rem;
+  }
+
+  .fancy-button {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .home-content {
+    padding: 1.2rem;
+    max-width: 90%;
+  }
+}
